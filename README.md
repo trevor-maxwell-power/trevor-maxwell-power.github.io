@@ -1,8 +1,7 @@
-# Maxwell — root-hosted Zoho widgets
+# Maxwell Tranche Widget — built bundle
 
-Served from the domain **root** (`https://trevor-maxwell-power.github.io/`) rather than a
-project subpath. The Zoho widget SDK reports its own origin as `protocol//host/` and the
-handshake is sensitive to being served from the root, which is how every working Zoho
-widget we've seen is hosted.
+Static build served to Zoho CRM as a Web Tab widget. **Do not edit by hand** — this is
+generated output. Source lives in the private `maxwell-tranche-widget` repo.
 
-Generated output — do not edit. Source: private `maxwell-tranche-widget` repo.
+Contains no credentials and no customer data: sample deal economics are real figures from
+a locked tranche, but all customer and installer identities are synthetic.
