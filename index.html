@@ -8,8 +8,8 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <title>Maxwell — Tranche Creation</title>
-  <script type="module" crossorigin src="./assets/index-D6x2eVYr.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CrPoRoRm.css">
+  <script type="module" crossorigin src="./assets/index-DJRD3v4l.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-RCFIB2KO.css">
 </head>
 <body>
 <div id="app" class="shell">
@@ -17,6 +17,7 @@
   <!-- Who am I -->
   <div id="who" class="who"></div>
 
+  <div id="sbx" class="sbx"></div>
   <div id="srcBanner" class="banner warn"></div>
 
   <div class="card-outer">
@@ -31,6 +32,7 @@
         <p class="note" id="invNote"></p>
       </div>
       <div class="whead-acts">
+        <button id="pricing">Pricing matrix</button>
         <button id="conn">Connection</button>
         <button id="refresh">Refresh pool</button>
         <button id="newTranche">New tranche</button>
@@ -102,7 +104,8 @@
         <div id="gaps" class="panel sum" hidden></div>
 
         <div class="acts">
-          <button id="lock" class="primary">Lock and generate documents</button>
+          <button id="create" class="primary">Create tranche</button>
+          <button id="lock" class="secondary">Lock and generate documents</button>
           <div id="lockDeny" class="deny" hidden></div>
           <button id="preview" class="secondary">Preview documents and economics</button>
           <button id="margin" class="secondary">Maximise margin…</button>
