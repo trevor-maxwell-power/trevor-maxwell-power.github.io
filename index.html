@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Asset filenames are content-hashed, but this document must not be cached or the
+       iframe keeps loading yesterday's bundle. -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <title>Maxwell — Tranche Creation</title>
+  <script type="module" crossorigin src="./assets/index-bbpkefTJ.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DV_vZTbc.css">
+</head>
+<body>
+<div id="app" class="shell">
+
+  <!-- Who am I -->
+  <div id="who" class="who"></div>
+
+  <div id="srcBanner" class="banner warn"></div>
+
+  <div class="card-outer">
+
+    <div class="whead">
+      <div>
+        <h2>Tranche creation</h2>
+        <p class="whead-sub">
+          Investor: <select id="investor"></select>
+          &nbsp;·&nbsp; Target lock: <span id="targetLock"></span>
+        </p>
+        <p class="note" id="invNote"></p>
+      </div>
+      <div class="whead-acts">
+        <button id="conn">Connection</button>
+        <button id="refresh">Refresh pool</button>
+        <button id="newTranche">New tranche</button>
+      </div>
+    </div>
+
+    <div id="pools" class="pools"></div>
+
+    <div class="cols">
+
+      <!-- LEFT: pool -->
+      <div class="panel">
+        <div class="panel-h">
+          <div id="filters" class="pools" style="margin:0"></div>
+          <span class="n" id="shown"></span>
+        </div>
+        <div class="scroll">
+          <table class="ptable">
+            <colgroup>
+              <col style="width:36%"><col style="width:9%"><col style="width:15%">
+              <col style="width:26%"><col style="width:14%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Deal · installer</th><th>State</th><th>Tags</th>
+                <th style="text-align:right">Bill of sale</th><th style="text-align:center">Add</th>
+              </tr>
+            </thead>
+            <tbody id="poolBody"></tbody>
+          </table>
+        </div>
+        <div class="foot" id="poolFoot" hidden></div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="right-col">
+
+        <div class="panel sum">
+          <div class="sum-t">Economics summary</div>
+          <div class="sum-grid">
+            <div><div class="sum-k">Deals in tranche</div><div class="sum-v" id="sCount">0</div></div>
+            <div><div class="sum-k">Total IC</div><div class="sum-v" id="sIC">—</div></div>
+          </div>
+          <div class="sum-row top"><span>Weighted pre-pay % BoS</span><span class="v" id="sBosPct">—</span></div>
+          <div class="sum-row"><span>Weighted pre-pay % SOW</span><span class="v" id="sSowPct">—</span></div>
+          <div class="sum-row"><span>Total bill of sale</span><span class="v" id="sBos">—</span></div>
+          <div class="sum-row"><span>Total pre-pay</span><span class="v" id="sPrePay">—</span></div>
+          <div class="sum-row"><span>Estimated ITC</span><span class="v" id="sItc">—</span></div>
+          <div class="sum-row"><span>Capacity</span><span class="v" id="sKw">—</span></div>
+        </div>
+
+        <div class="panel sum">
+          <div class="panel-h" style="padding:0 0 8px;border:0">
+            <span class="sum-t" style="margin:0">Adder charges</span>
+            <button id="addAdder" class="mini">+</button>
+          </div>
+          <div id="adderLines"></div>
+          <div class="sum-row total"><span>Total adders</span><span class="v" id="adderTotal">$0</span></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-h">
+            <span class="t">In this tranche</span>
+            <span id="status" class="pill open">Empty</span>
+          </div>
+          <div class="scroll" style="max-height:190px" id="working"></div>
+        </div>
+
+        <div id="gaps" class="panel sum" hidden></div>
+
+        <div class="acts">
+          <button id="lock" class="primary">Lock and generate documents</button>
+          <div id="lockDeny" class="deny" hidden></div>
+          <button id="preview" class="secondary">Preview documents and economics</button>
+          <button id="margin" class="secondary">Maximise margin…</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="recent">
+      <div class="recent-h">Recent tranches</div>
+      <div class="recent-grid" id="recent"></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal" id="modal" hidden>
+  <div class="mbox">
+    <div class="mhead">
+      <h3 id="modalTitle"></h3>
+      <button id="modalClose" class="x">✕</button>
+    </div>
+    <div class="mbody" id="modalBody"></div>
+  </div>
+</div>
+
+</body>
+</html>
