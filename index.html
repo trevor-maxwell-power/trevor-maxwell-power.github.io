@@ -8,8 +8,8 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <title>Maxwell — Tranche Creation Helper</title>
-  <script type="module" crossorigin src="./assets/index-CFJabpHE.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-D2R1NNmw.css">
+  <script type="module" crossorigin src="./assets/index-BtZIERPv.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-lSO1IdZO.css">
 </head>
 <body>
 <div id="app" class="shell">
@@ -69,51 +69,53 @@
         <div class="foot" id="poolFoot" hidden></div>
       </div>
 
-      <!-- RIGHT -->
-      <div class="right-col">
-
-        <div class="panel sum">
-          <div class="sum-t">Economics summary</div>
-          <div class="sum-grid">
-            <div><div class="sum-k">Deals in tranche</div><div class="sum-v" id="sCount">0</div></div>
-            <div><div class="sum-k">Total IC</div><div class="sum-v" id="sIC">—</div></div>
-          </div>
-          <div class="sum-row top"><span>Weighted pre-pay % BoS</span><span class="v" id="sBosPct">—</span></div>
-          <div class="sum-row"><span>Weighted pre-pay % SOW</span><span class="v" id="sSowPct">—</span></div>
-          <div class="sum-row"><span>Total bill of sale</span><span class="v" id="sBos">—</span></div>
-          <div class="sum-row"><span>Total pre-pay</span><span class="v" id="sPrePay">—</span></div>
-          <div class="sum-row"><span>Estimated ITC</span><span class="v" id="sItc">—</span></div>
-          <div class="sum-row"><span>Capacity</span><span class="v" id="sKw">—</span></div>
+      <!-- RIGHT: the deals currently in the tranche — in line with the pool, so deals move
+           out of the pool and into here as they're added, and back when removed. -->
+      <div class="panel" id="builder">
+        <div class="panel-h">
+          <span class="t">In this tranche</span>
+          <span id="status" class="pill open">Empty</span>
         </div>
-
-        <div class="panel sum">
-          <div class="panel-h" style="padding:0 0 8px;border:0">
-            <span class="sum-t" style="margin:0">Adder charges</span>
-            <button id="addAdder" class="mini">+</button>
-          </div>
-          <div id="adderLines"></div>
-          <div class="sum-row total"><span>Total adders</span><span class="v" id="adderTotal">$0</span></div>
-        </div>
-
-        <div class="panel" id="builder">
-          <div class="panel-h">
-            <span class="t">In this tranche</span>
-            <span id="status" class="pill open">Empty</span>
-          </div>
-          <div class="scroll" style="max-height:190px" id="working"></div>
-        </div>
-
-        <div id="gaps" class="panel sum" hidden></div>
-
-        <div class="acts">
-          <button id="create" class="primary">Create tranche</button>
-          <button id="lock" class="secondary">Lock and generate documents</button>
-          <div id="lockDeny" class="deny" hidden></div>
-          <button id="preview" class="secondary">Preview documents and economics</button>
-          <button id="margin" class="secondary">Maximise margin…</button>
-        </div>
-
+        <div class="scroll" style="max-height:min(620px,66vh)" id="working"></div>
       </div>
+    </div>
+
+    <!-- Below the pool + tranche: the controls, in a row. -->
+    <div class="lower">
+
+      <div class="panel sum">
+        <div class="panel-h" style="padding:0 0 8px;border:0">
+          <span class="sum-t" style="margin:0">Adder charges</span>
+          <button id="addAdder" class="mini">+</button>
+        </div>
+        <div id="adderLines"></div>
+        <div class="sum-row total"><span>Total adders</span><span class="v" id="adderTotal">$0</span></div>
+      </div>
+
+      <div class="panel sum">
+        <div class="sum-t">Economics summary</div>
+        <div class="sum-grid">
+          <div><div class="sum-k">Deals in tranche</div><div class="sum-v" id="sCount">0</div></div>
+          <div><div class="sum-k">Total IC</div><div class="sum-v" id="sIC">—</div></div>
+        </div>
+        <div class="sum-row top"><span>Weighted gross prepay % BoS</span><span class="v" id="sBosPct">—</span></div>
+        <div class="sum-row"><span>Weighted gross prepay % SOW</span><span class="v" id="sSowPct">—</span></div>
+        <div class="sum-row"><span>Total bill of sale</span><span class="v" id="sBos">—</span></div>
+        <div class="sum-row"><span>Total gross prepay</span><span class="v" id="sPrePay">—</span></div>
+        <div class="sum-row"><span>Estimated ITC</span><span class="v" id="sItc">—</span></div>
+        <div class="sum-row"><span>Capacity</span><span class="v" id="sKw">—</span></div>
+      </div>
+
+      <div id="gaps" class="panel sum" hidden></div>
+
+      <div class="acts">
+        <button id="create" class="primary">Create tranche</button>
+        <button id="lock" class="secondary">Lock and generate documents</button>
+        <div id="lockDeny" class="deny" hidden></div>
+        <button id="preview" class="secondary">Preview documents and economics</button>
+        <button id="margin" class="secondary">Maximise margin…</button>
+      </div>
+
     </div>
 
     <div class="recent">
