@@ -8,8 +8,8 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <title>Maxwell — Tranche Creation Helper</title>
-  <script type="module" crossorigin src="./assets/index-B0TcjJs1.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-lSO1IdZO.css">
+  <script type="module" crossorigin src="./assets/index-C8DUeq_n.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DfbbbKvs.css">
 </head>
 <body>
 <div id="app" class="shell">
@@ -27,13 +27,14 @@
         <h2>Tranche Creation Helper</h2>
         <p class="whead-sub">
           Investor: <select id="investor"></select>
-          &nbsp;·&nbsp; Target lock: <span id="targetLock"></span>
+          &nbsp;·&nbsp; Target lock: <input type="date" id="targetLock" class="lockdate" />
+          &nbsp;·&nbsp; Open tranche: <select id="openTranche" class="opentranche"></select>
         </p>
         <p class="note" id="invNote"></p>
       </div>
       <div class="whead-acts">
+        <button id="key" class="keybtn">▾ Key</button>
         <button id="pricing">Pricing matrix</button>
-        <button id="assume">Questions for Gabe</button>
         <button id="conn">Connection</button>
         <button id="newTranche">New tranche</button>
       </div>
@@ -42,6 +43,7 @@
     <div id="testFilter" class="test-filter"></div>
     <div id="pools" class="pools"></div>
     <div id="criteria" class="criteria-panel"></div>
+    <div id="keyPanel" class="keypanel"></div>
 
     <div class="cols">
 
@@ -85,11 +87,10 @@
 
       <div class="panel sum">
         <div class="panel-h" style="padding:0 0 8px;border:0">
-          <span class="sum-t" style="margin:0">Adder charges</span>
-          <button id="addAdder" class="mini">+</button>
+          <span class="sum-t" style="margin:0">Financing fee (adders)</span>
         </div>
         <div id="adderLines"></div>
-        <div class="sum-row total"><span>Total adders</span><span class="v" id="adderTotal">$0</span></div>
+        <div class="sum-row total"><span>Total financing fee applied</span><span class="v" id="adderTotal">$0</span></div>
       </div>
 
       <div class="panel sum">
@@ -104,8 +105,9 @@
         <div class="sum-row"><span>Total pre-pay</span><span class="v" id="sBasePrepay">—</span></div>
         <div class="sum-row"><span>Total financing fee</span><span class="v" id="sFee">—</span></div>
         <div class="sum-row"><span>Total gross prepay</span><span class="v" id="sPrePay">—</span></div>
-        <div class="sum-row"><span>Estimated ITC</span><span class="v" id="sItc">—</span></div>
-        <div class="sum-row"><span>Capacity</span><span class="v" id="sKw">—</span></div>
+        <div class="sum-row"><span>ITC</span><span class="v" id="sItc">—</span></div>
+        <div class="sum-row"><span>Solar capacity</span><span class="v" id="sKw">—</span></div>
+        <div class="sum-row"><span>Battery capacity</span><span class="v" id="sKwh">—</span></div>
       </div>
 
       <div id="gaps" class="panel sum" hidden></div>
