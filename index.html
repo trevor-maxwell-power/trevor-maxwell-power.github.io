@@ -8,8 +8,8 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <title>Maxwell — Tranche Creation Helper</title>
-  <script type="module" crossorigin src="./assets/index-C8DUeq_n.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DfbbbKvs.css">
+  <script type="module" crossorigin src="./assets/index-DcDORig7.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-QRp-uxts.css">
 </head>
 <body>
 <div id="app" class="shell">
@@ -27,10 +27,17 @@
         <h2>Tranche Creation Helper</h2>
         <p class="whead-sub">
           Investor: <select id="investor"></select>
-          &nbsp;·&nbsp; Target lock: <input type="date" id="targetLock" class="lockdate" />
-          &nbsp;·&nbsp; Open tranche: <select id="openTranche" class="opentranche"></select>
+          &nbsp;·&nbsp; <label for="targetLock">Tranche date:</label>
+          <input type="date" id="targetLock" class="lockdate" title="The tranche's date — editable. Sets the date on the tranche record and its name." />
+        </p>
+        <p class="whead-sub">
+          Open tranche:
+          <input type="search" id="openSearch" class="opensearch" placeholder="Search open tranches…" />
+          <select id="openTranche" class="opentranche"></select>
+          <span id="openCount" class="dsub"></span>
         </p>
         <p class="note" id="invNote"></p>
+        <div id="loadedBanner" class="loaded-banner" hidden></div>
       </div>
       <div class="whead-acts">
         <button id="key" class="keybtn">▾ Key</button>
